@@ -14,8 +14,9 @@ protocol CustomCells:class {
 class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var CellDelegate:CustomCells?
+    
 
+    var CellDelegate:CustomCells?
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.delegate = self
@@ -24,7 +25,6 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,6 +33,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
+        CollectionViewCell?.Label_1.text = "\(indexPath)"
         return CollectionViewCell!
     }
     
