@@ -11,7 +11,8 @@ class CollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var Label_1: UILabel!
-    var indexPath:IndexPath?
+    
+    var selec:String?
     
     override func awakeFromNib() {
         super.awakeFromNib()

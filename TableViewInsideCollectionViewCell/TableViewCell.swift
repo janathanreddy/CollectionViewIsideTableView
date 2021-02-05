@@ -34,6 +34,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
         CollectionViewCell?.Label_1.text = "\(indexPath)"
+        CollectionViewCell?.selec = "\(indexPath.row)"
         return CollectionViewCell!
     }
     
